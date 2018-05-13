@@ -1,0 +1,58 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <img id="burger-image" src="/assets/img/cute_burger.jpg" alt="">
+            <h3 id="header-text">Eat Da Burger</h3>
+        </div>
+    </div>
+
+    {{!-- side by side row for un-devoured and devoured burgers --}}
+    <div class="row">
+        {{!-- yet to be devoured --}}
+        <div class="col-md-6">
+           <ul>
+               {{#each burgers}}
+                    {{#if devoured}}
+                        <li>
+                            {{this.id}}. {{this.burger_name}}
+                            <button data-burgerid="{{this.id}}" data-burgername="{{this.burger_name}}" data-burgerdevour="{{this.devoured}}" id="devburger">devour</button>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+
+        {{!-- devoured burgers --}}
+        <div class="col-md-6">
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <li>
+                            {{this.id}}. {{this.burger_name}}
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+
+    {{!-- form to input new burgers --}}
+    <div class="row" id="add-burger-form">
+        <div class="col-md-12">
+            <h2>Create a new burger</h2>
+                <form class="create-form"  id="addburger">
+
+                    <div class="form-group">
+                        <label for="burg">Burger Name:</label>
+                        <input type="text" id="burg" name="burger_name">
+                    </div>
+
+                    <button type="submit">Add Burger</button>
+                </form>
+        </div>
+    </div>
+
+</div>

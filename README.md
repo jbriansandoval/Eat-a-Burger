@@ -1,2 +1,2 @@
 # Eat-a-Burger
-12: MySQL Full Stack App
+Homework 12: MySQL Full Stack App | Lesson 14-Handlebars
